@@ -1,0 +1,35 @@
+﻿<Window x:Class="Chat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat"
+        mc:Ignorable="d"
+        Title="ChatClient" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="229*"/>
+            <ColumnDefinition Width="285*"/>
+            <ColumnDefinition Width="285*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Поля для отображения информации о пользователях и сообщениях -->
+        <ListBox x:Name="chatUsers" Grid.RowSpan="3" Grid.Column="0" Margin="5,5,5,5" BorderThickness="2"/>
+        <ListBox x:Name="chatMesHistory" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" BorderThickness="2" Grid.ColumnSpan="2"/>
+
+        <!-- Поля для набора текста и отправки сообщения -->
+        <TextBox x:Name="messageTxt" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" BorderThickness="2" FontSize="14" Grid.ColumnSpan="2" KeyUp="messageTxt_KeyUp"/>
+
+        <!-- текст для Ip -->
+        <TextBox x:Name="ipTxt" Grid.Column="1" Margin="5,5,5,5" BorderThickness="2" TextAlignment="Center" FontSize="18" FontWeight="Bold" IsEnabled="False"/>
+
+        <!-- и имени -->
+        <TextBox x:Name="nameTxt" Grid.Column="2" Margin="5,5,65,5" BorderThickness="2" TextAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="nameConfirmBtn" Grid.Column="2" HorizontalAlignment="Right" Content="Connect" Margin="5" Click="nameConfirmBtn_Click"/>
+    </Grid>
+</Window>
